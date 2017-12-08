@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cloud Word</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
+  <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
   <div class="grid-container">
@@ -28,12 +30,15 @@
           <input type="submit" class="button" value="send">
         </form>
 
-        {% if words %}
-          <h2>Top 100 words</h2>
-          {% for word in words %}
-            <p>{{ word }}</p>
-          {% endfor %}
-        {% endif %}
+        <div>
+          {% if words %}
+            <h2>Top 100 words</h2>
+            {% for word, repetition in words %}
+              <span class="top-words" data-size="{{ repetition }}">{{ word }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+
       </div>
     </div>
   </div>
@@ -41,5 +46,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+  <script src="{% static 'main.js' %}"></script>
 </body>
 </html>
