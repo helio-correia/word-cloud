@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# Python
+/__pycache__/
+*.pyo
+*.pyc
+*/*.pyc
+
+# Editors
+.idea/
+
+# Project
+.venv/
+.env
