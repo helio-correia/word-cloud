@@ -13,6 +13,27 @@
     <div class="grid-x grid-margin-x align-center">
       <div>
         <h1 class="text-center">Cloud Word</h1>
+        <form method="post">
+          {% csrf_token %}
+
+          <label for="{{ form.url.id_for_label }}"
+                 class="{% if form.url.errors %}is-invalid-label{% endif %}">
+            {{ form.url.label }}
+            <input type="url" name="url" required id="id_url"
+                   class="{% if form.url.errors %}is-invalid-input{% endif %}">
+            {% for error in form.url.errors %}
+              <span class="form-error is-visible">{{ error|escape }}</span>
+            {% endfor %}
+          </label>
+          <input type="submit" class="button" value="send">
+        </form>
+
+        {% if words %}
+          <h2>Top 100 words</h2>
+          {% for word in words %}
+            <p>{{ word }}</p>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
