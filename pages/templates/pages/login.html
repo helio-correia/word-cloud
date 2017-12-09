@@ -1,0 +1,15 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+  <div class="grid-x grid-margin-x align-center">
+      <div>
+        <h1 class="text-center">Login</h1>
+        <form class="login-form">
+          <div hidden class="alert callout non_field_errors"></div>
+          <input type="text" name="username" placeholder="username">
+          <input type="password" name="password" placeholder="password">
+          <input type="submit" class="button expanded" value="login">
+        </form>
+      </div>
+  </div>
+{% endblock %}

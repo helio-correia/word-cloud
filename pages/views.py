@@ -15,3 +15,11 @@ def home(request):
         form = WebsiteForm()
 
     return render(request, 'pages/home.html', {'form': form, 'words': words})
+
+
+def login(request):
+    return render(request, 'pages/login.html')
+
+
+def admin(request):
+    return render(request, 'pages/admin.html')

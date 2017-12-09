@@ -1,0 +1,36 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+  <div class="admin-page hide">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Cloud Word</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><button type="button" class="button button-logout">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="grid-x grid-margin-x align-center">
+      <div>
+        <h1 class="text-center">Cloud Word</h1>
+
+        <table class="hover unstriped">
+          <thead>
+            <tr>
+              <th>Word</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody class="words-list">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
