@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from words.helpers import get_words_from_url
-from .forms import WebsiteForm
+from words.forms import WebsiteForm
 
 
 def home(request):
@@ -10,7 +10,7 @@ def home(request):
         form = WebsiteForm(request.POST)
         if form.is_valid():
             words = get_words_from_url(form.cleaned_data['url'])
-
+            form.save()
     else:
         form = WebsiteForm()
 

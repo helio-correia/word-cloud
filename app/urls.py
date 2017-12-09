@@ -18,6 +18,10 @@ from django.urls import path
 
 from pages.views import home
 
+
+admin.site.site_header = 'Words Administration'
+admin.site.site_title = 'Words Administration'
+
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
